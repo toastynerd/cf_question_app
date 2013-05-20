@@ -7,4 +7,14 @@
                                 :method => :delete,
                                 :confirm => "Are you sure you want to delete this question?",
                                 :class => "button" %>
+  <%= link_to "Answer Question", new_question_answer_path(@question) %>                    
+</div>
+<div id="tickets" class="panel large-10">
+  <ul>
+    <% @question.answers.each do |answer| %>
+    <li>
+        <%= link_to answer.answer,[@question, @answer] %>
+    </li>
+    <% end %>
+  </ul>
 </div>

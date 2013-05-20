@@ -4,6 +4,7 @@ class Question
   key :ask, String
   key :detail, String
 
+  many :answers
+    
   validates_presence_of :ask
-
 end
