@@ -1,4 +1,10 @@
-<div class="panel large-8 centered">
-  <h2>Questions questions questions</h2>
+<div class="panel large-10 large-centered">
+  <h2>Questions Questions Questions!</h2>
+  <ul>
+    <% @questions.each do |question| %>
+      <li><%= link_to question.ask, question %></li>
+    <% end %>
+  </ul>
+
   <%= link_to "Ask a New Question", new_question_path, :class => "button" %>
 </div>

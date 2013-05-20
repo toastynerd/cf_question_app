@@ -18,13 +18,18 @@
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
+    <% if(:title) %>
+      <%= yield(:title) %>
+    <% else %>
+      Riddler-Question and Answer
+    <% end %>
   </head>
 
   <body>
     <div class="row">
       
       <% flash.each do |key, value| %>
-          <div id = "<%= key %>" class="flash panel">
+          <div id = "<%= key %>" class="flash panel large-10">
             <%= value %>
           </div>
       <% end %>
